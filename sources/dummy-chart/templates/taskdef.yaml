@@ -1,0 +1,22 @@
+apiVersion: aws.composite.crp.allianz.io/v1alpha1
+kind: ECSTaskdef
+metadata:
+  name: {{ .Values.Name }}
+  namespace: {{ .Values.Namespace }}
+  {{- with .Values.Labels }}
+  labels:
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  taskDefinitionsHash: {{ .Values.taskDefinitionsHash }}
+  serviceName: {{ .Values.serviceName }}
+  family: {{ .Values.family }}
+  cpu: {{ .Values.cpu }}
+  memory: {{ .Values.memory }}
+  containerDefinitions: {{ .Values.containerDefinitions | toYaml | nindent 4 }}
+  enablePrisma: {{ .Values.enablePrisma }}
+  enableOneAgent: {{ .Values.enableOneAgent }}
+  {{- with .Values.tags }}
+  tags:
+  {{- toYaml . | nindent 4 }}
+  {{- end }}

@@ -1,0 +1,40 @@
+Name: example
+Namespace: example
+Labels:
+  app: example
+  app.kubernetes.io/name: example
+  app.kubernetes.io/instance: example
+  app.kubernetes.io/version: "1.0"
+  app.kubernetes.io/managed-by: Helm
+  helm.sh/chart: example-0.1.0
+taskDefinitionsHash: "example"
+serviceName: example
+family: example
+cpu: ".25 vCPU"
+memory: "1 GB"
+containerDefinitions: |-
+  [
+    {
+      "name": "example",
+      "image": "example",
+      "essential":true,
+      "command": ["example"],
+      "cpu": 256,
+      "memory": 2048,
+      "portMappings": [
+          {
+              "containerPort": 8080,
+              "hostPort": 8080,
+              "protocol": "tcp"
+          }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "example",
+          "awslogs-region": "example",
+          "awslogs-stream-prefix": "example"
+        }
+      }
+    }
+  ]
