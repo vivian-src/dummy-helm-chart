@@ -12,7 +12,7 @@ serviceName: example
 family: example
 cpu: ".25 vCPU"
 memory: "1 GB"
-containerDefinitions: |-
+containerDefinitions: |
   [
     {
       "name": "example",
@@ -38,3 +38,5 @@ containerDefinitions: |-
       }
     }
   ]
+enablePrisma: true
+enableOneAgent: true

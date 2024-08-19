@@ -13,7 +13,8 @@ spec:
   family: {{ .Values.family }}
   cpu: {{ .Values.cpu }}
   memory: {{ .Values.memory }}
-  containerDefinitions: {{ .Values.containerDefinitions | toYaml | nindent 4 }}
+  containerDefinitions: |-
+  {{- .Values.containerDefinitions | nindent 4 }}
   enablePrisma: {{ .Values.enablePrisma }}
   enableOneAgent: {{ .Values.enableOneAgent }}
   {{- with .Values.tags }}
