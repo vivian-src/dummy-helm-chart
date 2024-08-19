@@ -15,8 +15,8 @@ spec:
   memory: {{ .Values.memory }}
   containerDefinitions: |-
   {{- .Values.containerDefinitions | nindent 4 }}
-  enablePrisma: {{ .Values.enablePrisma }}
-  enableOneAgent: {{ .Values.enableOneAgent }}
+  enablePrismaDefender: {{ .Values.enablePrismaDefender }}
+  enableDynatraceOneAgent: {{ .Values.enableDynatraceOneAgent }}
   {{- with .Values.tags }}
   tags:
   {{- toYaml . | nindent 4 }}

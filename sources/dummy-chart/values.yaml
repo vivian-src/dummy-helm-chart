@@ -38,5 +38,5 @@ containerDefinitions: |
       }
     }
   ]
-enablePrisma: true
-enableOneAgent: true
+enablePrismaDefender: true
+enableDynatraceOneAgent: true
